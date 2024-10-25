@@ -1,7 +1,6 @@
 from melo.api import TTS
 # from IPython.display import Audio
-import nltk
-nltk.download('all')
+# 
 
 # CPU is sufficient for real-time inference.
 # You can set it manually to 'cpu' or 'cuda' or 'cuda:0' or 'mps'
