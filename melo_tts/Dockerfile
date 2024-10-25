@@ -16,7 +16,10 @@ RUN apt-get update && apt-get install -y \
 # # RUN pip install --no-cache-dir git+https://github.com/huggingface/parler-tts.git
 RUN pip install git+https://github.com/myshell-ai/MeloTTS.git
 RUN python3 -m unidic download
-RUN python3 -c "import nltk; nltk.download('averaged_perceptron_tagger')"
+RUN python3 -c "import nltk; nltk.download('averaged_perceptron_tagger_eng')"
+RUN python3 -c "import nltk; nltk.download('all')"
+
+
 
 
 # Set the entry point to keep the container alive (optional, remove if unnecessary)
