@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  my-service:
+    # image: melo_tts   
+    build:
+      context: ./melo_tts  # Builds from the current directory where the Dockerfile is located
+      dockerfile: Dockerfile 
+    volumes:
+      -  ./melo_tts:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              # count: 1
+              device_ids: ['0']
+              capabilities: [gpu]
+    # command: ["tail", "-f", "/dev/null"] 
+    command: ["python3","melo_tts.py"]
